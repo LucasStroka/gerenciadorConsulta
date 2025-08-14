@@ -1,7 +1,7 @@
 const {medico, paciente, consultas} = require("../data/dados")
 
 function exibirMedicos() {
-    // console.clear()
+    console.clear()
     console.log("=".repeat(75));
     for (let i = 0; i < medico.length; i++) {
         console.log(`${medico[i].id} - Nome: ${medico[i].nome} - Especialização: ${medico[i].especialização}`);
@@ -10,7 +10,7 @@ function exibirMedicos() {
 }
 
 function exibirPacientes() {
-    // console.clear()
+    console.clear()
     console.log("=".repeat(75));
     for (let i = 0; i < paciente.length; i++) {
         console.log(`${paciente[i].id} - Nome: ${paciente[i].nome} - Idade: ${paciente[i].idade}`);
@@ -19,20 +19,17 @@ function exibirPacientes() {
 }
 
 function exibirConsultas() {
-    // console.clear()
+    console.clear()
     console.log("=".repeat(75));
     for (let i = 0; i < consultas.length; i++) {
-        console.log(`
-ID: ${consultas[i].id}
+        console.log(`ID: ${consultas[i].id}
 Descrição: ${consultas[i].descricao}
 ID Medico: ${medico[parseInt(consultas[i].medico)].id} - Medico: ${medico[parseInt(consultas[i].medico)].nome} - Especialização: ${medico[parseInt(consultas[i].medico)].especialização}
-ID Paciente: ${paciente[parseInt(consultas[i].paciente)]}
-`);
+ID Paciente: ${paciente[(consultas[i].paciente)-1].id} - Nome: ${paciente[(consultas[i].paciente)-1].nome} - Idade: ${paciente[(consultas[i].paciente)-1].idade}`);
 }
     console.log("=".repeat(75));
 }
 
-module.exports = {exibirMedicos, exibirPacientes, exibirConsultas}
+//TODO/ Exibir Consultar de um medico 
 
-// ID Medico: ${medico[consultas[i].medico]} - Medico: ${medico[consultas[i].medico].nome} - Especialização: ${medico[consultas[i].medico]}
-// ID Paciente: ${paciente[consultas[i].paciente]} - Nome: ${paciente[consultas[i].paciente].nome} - Idade: ${paciente[consultas[i].paciente].idade}
+module.exports = {exibirMedicos, exibirPacientes, exibirConsultas}

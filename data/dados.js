@@ -9,7 +9,7 @@ const paciente = [
 ]
 
 const consultas = [
-    {id: 1, medico: 1, paciente: 2, descricao: "Consulta Rotina"}
+    {id: 1, medico:1, paciente:2, descricao: "Consulta Rotina"}
 ]
 
 module.exports = {medico, paciente, consultas}
